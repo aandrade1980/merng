@@ -34,6 +34,20 @@ const client = new ApolloClient({
             }
           }
         }
+      },
+      Post: {
+        fields: {
+          comments: {
+            merge(_, incoming) {
+              return incoming;
+            }
+          },
+          likes: {
+            merge(_, incoming) {
+              return incoming;
+            }
+          }
+        }
       }
     }
   })
